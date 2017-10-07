@@ -1,5 +1,5 @@
 # REST API with OAuth2
-Sample REST API OAuth2 project, build with [Laravel](https://laravel.com) and [Laravel Passport](https://laravel.com/docs/passport).
+Sample of REST API OAuth2 project, build with [Laravel](https://laravel.com) and [Laravel Passport](https://laravel.com/docs/passport).
 
 # Installation
 - Clone this repository
