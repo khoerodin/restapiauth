@@ -3,7 +3,7 @@ Sample of REST API OAuth2 project, build with [Laravel](https://laravel.com) and
 
 # Installation
 - Clone this repository
-- run `composer install'
+- run `composer install`
 - run `npm install`
 - run `npm run dev`
 - setup db connection in `.env` file
