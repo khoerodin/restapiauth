@@ -23,8 +23,8 @@ class CommentController extends Controller
      */
     public function __construct(Comment $comment)
     {
-        $this->model = new Repository( $comment );
-        
+        $this->model = new Repository($comment);
+
         // Protect all except reading
         $this->middleware('auth:api', ['except' => ['index', 'show'] ]);
     }
@@ -39,10 +39,10 @@ class CommentController extends Controller
         $comments = $this->model->with('user')->latest();
 
         // check for video_id in request
-        if ($vid =  $request->get('video_id') ) {
-            $comments = $comments->where('video_id' , $vid);
+        if ($vid =  $request->get('video_id')) {
+            $comments = $comments->where('video_id', $vid);
         }
-        
+
         return $comments->paginate();
     }
 
@@ -68,7 +68,7 @@ class CommentController extends Controller
         $this->beforeCreate($request);
 
         return $request->user()->comments()
-            ->create( $request->only($this->model->getModel()->fillable));
+            ->create($request->only($this->model->getModel()->fillable));
     }
 
     /**
@@ -104,10 +104,10 @@ class CommentController extends Controller
     {
         $this->beforeUpdate($request);
 
-        if (! $this->model->update($request->only($this->model->getModel()->fillable), $id) ) {
+        if (! $this->model->update($request->only($this->model->getModel()->fillable), $id)) {
             return $this->errorBadRequest('Unable to update.');
         }
-        
+
         return $this->model->find($id);
     }
 
